@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="Freesdw,Freesdw's Essay">
   
-  <meta name="description" content="题目来源：acwing 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;using nam">
+  <meta name="description" content="题目 1来源：acwing 89 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;usin">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速幂求解">
 <meta property="og:url" content="freesdw.github.io/2019/08/26/快速幂求解/index.html">
 <meta property="og:site_name" content="Freesdw的随笔">
-<meta property="og:description" content="题目来源：acwing 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;using nam">
+<meta property="og:description" content="题目 1来源：acwing 89 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;usin">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-26T11:27:16.026Z">
+<meta property="og:updated_time" content="2019-08-26T14:08:39.051Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速幂求解">
-<meta name="twitter:description" content="题目来源：acwing 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;using nam">
+<meta name="twitter:description" content="题目 1来源：acwing 89 题目内容求a的b次方对p取模的值。 输入格式 三个整数a，b，p，在同一行用空格隔开。 输出格式 输出一个整数，表示a ^ b mod p 的值。 数据范围 0 ≤ a, b, p ≤ 109 输入样例：  3 2 7  输出样例：  2  代码实现12345678910111213141516171819#include &amp;lt;iostream&amp;gt;usin">
   
   
     <link rel="icon" href="/bitbug_favicon.ico">
@@ -136,7 +136,7 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><strong>来源：</strong><a href="https://www.acwing.com/problem/content/91/" target="_blank" rel="noopener">acwing</a></p>
+            <h1 id="题目-1"><a href="#题目-1" class="headerlink" title="题目 1"></a>题目 1</h1><p><strong>来源：</strong><a href="https://www.acwing.com/problem/content/91/" target="_blank" rel="noopener">acwing 89</a></p>
 <h2 id="题目内容"><a href="#题目内容" class="headerlink" title="题目内容"></a>题目内容</h2><p>求a的b次方对p取模的值。</p>
 <p><strong>输入格式</strong></p>
 <p>三个整数a，b，p，在同一行用空格隔开。</p>
@@ -152,12 +152,32 @@
 <blockquote>
 <p>2</p>
 </blockquote>
-<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, p;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; p;</span><br><span class="line">    <span class="comment">// 处理p为1时的情况，故%p</span></span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span> % p;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) &#123;</span><br><span class="line">            res = res * <span class="number">1l</span>l * a % p;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a * <span class="number">1l</span>l * a % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, p;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; p;</span><br><span class="line">    <span class="comment">// 处理p为1时的情况，故%p</span></span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span> % p;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) &#123;</span><br><span class="line">            res = res * <span class="number">1l</span>l * a % p;</span><br><span class="line">        &#125;</span><br><span class="line">        a = a * <span class="number">1l</span>l * a % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目-2"><a href="#题目-2" class="headerlink" title="题目 2"></a>题目 2</h1><p><strong>来源：</strong> <a href="https://www.acwing.com/problem/content/92/" target="_blank" rel="noopener">acwing 90</a></p>
+<h2 id="题目内容-1"><a href="#题目内容-1" class="headerlink" title="题目内容"></a>题目内容</h2><p>求<em>a</em>乘<em>b</em>对*p取模的值。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行输入整数<em>a</em>，第二行输入整数<em>b</em>，第三行输入整数<em>p</em>。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一个整数，表示a * b mod p的值。</p>
+<p><strong>数据范围</strong></p>
+<p>1 ≤ <em>a</em>，<em>b</em>，<em>p</em> ≤ 10 <sup>18</sup></p>
+<p><strong>输入样例：</strong></p>
+<blockquote>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ULL;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ULL a, b, p;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; p;</span><br><span class="line">    ULL result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(b &amp; <span class="number">1</span>) &#123;</span><br><span class="line">            result = (result + a) % p;</span><br><span class="line">        &#125;</span><br><span class="line">        a = (a &lt;&lt; <span class="number">1</span>) % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; result &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月26日 19:27</p>
+        <p>最后更新： 2019年08月26日 22:08</p>
         <p>原始链接： <a class="post-url" href="/2019/08/26/快速幂求解/" title="快速幂求解">freesdw.github.io/2019/08/26/快速幂求解/</a></p>
         <footer>
             <a href="freesdw.github.io">
@@ -275,7 +295,7 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目"><span class="post-toc-text">题目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目内容"><span class="post-toc-text">题目内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-text">代码实现</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目-1"><span class="post-toc-text">题目 1</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目内容"><span class="post-toc-text">题目内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码实现"><span class="post-toc-text">代码实现</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目-2"><span class="post-toc-text">题目 2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目内容-1"><span class="post-toc-text">题目内容</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现代码"><span class="post-toc-text">实现代码</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
