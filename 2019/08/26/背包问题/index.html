@@ -3,26 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>ios 集成 OpenCV | Freesdw的随笔</title>
+  <title>背包问题 | Freesdw的随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Freesdw,Freesdw's Essay">
   
-  <meta name="description" content="IOS 集成 OpenCV 上OpenCV官网下载你所需要版本的opencv.framework库  将opencv.framework拖拉入项目文件夹。   在项目设置处，在General -&amp;gt; Linked Frameworks and Libraries 导入下面这些库：   最后，将使用OpenCV的文件后缀从.m改为.mm">
-<meta name="keywords" content="IOS">
+  <meta name="description" content="题目来源： acwing 题目内容有N件物品和一个容量是V的背包。每件物品只能使用一次。 第i件物品的体积是vi，价值是wi。 求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。输出最大价值。 输入格式 第一行两个整数，N，V，用空格隔开，分别表示物品数量和背包容积。 接下来有N行，每行两个整数vi，wi，用空格隔开，分别表示第i件物品的体积和价值。 输出格式 输出一个整数">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ios 集成 OpenCV">
-<meta property="og:url" content="freesdw.github.io/2019/08/15/ios-集成-OpenCV/index.html">
+<meta property="og:title" content="背包问题">
+<meta property="og:url" content="freesdw.github.io/2019/08/26/背包问题/index.html">
 <meta property="og:site_name" content="Freesdw的随笔">
-<meta property="og:description" content="IOS 集成 OpenCV 上OpenCV官网下载你所需要版本的opencv.framework库  将opencv.framework拖拉入项目文件夹。   在项目设置处，在General -&amp;gt; Linked Frameworks and Libraries 导入下面这些库：   最后，将使用OpenCV的文件后缀从.m改为.mm">
+<meta property="og:description" content="题目来源： acwing 题目内容有N件物品和一个容量是V的背包。每件物品只能使用一次。 第i件物品的体积是vi，价值是wi。 求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。输出最大价值。 输入格式 第一行两个整数，N，V，用空格隔开，分别表示物品数量和背包容积。 接下来有N行，每行两个整数vi，wi，用空格隔开，分别表示第i件物品的体积和价值。 输出格式 输出一个整数">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="/images/ios-opencv-1.png">
-<meta property="og:image" content="/images/ios-opencv-2.png">
-<meta property="og:updated_time" content="2019-08-15T02:49:37.149Z">
+<meta property="og:updated_time" content="2019-08-26T11:24:55.905Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ios 集成 OpenCV">
-<meta name="twitter:description" content="IOS 集成 OpenCV 上OpenCV官网下载你所需要版本的opencv.framework库  将opencv.framework拖拉入项目文件夹。   在项目设置处，在General -&amp;gt; Linked Frameworks and Libraries 导入下面这些库：   最后，将使用OpenCV的文件后缀从.m改为.mm">
-<meta name="twitter:image" content="/images/ios-opencv-1.png">
+<meta name="twitter:title" content="背包问题">
+<meta name="twitter:description" content="题目来源： acwing 题目内容有N件物品和一个容量是V的背包。每件物品只能使用一次。 第i件物品的体积是vi，价值是wi。 求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。输出最大价值。 输入格式 第一行两个整数，N，V，用空格隔开，分别表示物品数量和背包容积。 接下来有N行，每行两个整数vi，wi，用空格隔开，分别表示第i件物品的体积和价值。 输出格式 输出一个整数">
   
   
     <link rel="icon" href="/bitbug_favicon.ico">
@@ -110,20 +107,20 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-ios-集成-OpenCV" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-背包问题" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      ios 集成 OpenCV
+      背包问题
     </h1>
     <div class="post-title-bar">
       <ul>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-08-15
+          <i class="fa fa-calendar"></i>  2019-08-26
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -139,23 +136,37 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h3 id="IOS-集成-OpenCV"><a href="#IOS-集成-OpenCV" class="headerlink" title="IOS 集成 OpenCV"></a>IOS 集成 OpenCV</h3><ul>
-<li><p>上<a href="https://opencv.org/" target="_blank" rel="noopener">OpenCV官网</a>下载你所需要版本的opencv.framework库</p>
-</li>
-<li><p>将opencv.framework拖拉入项目文件夹。</p>
-<p><img src="/images/ios-opencv-1.png" alt></p>
-</li>
-<li><p>在项目设置处，在General -&gt; Linked Frameworks and Libraries 导入下面这些库：</p>
-<p><img src="/images/ios-opencv-2.png" alt></p>
-</li>
-<li><p>最后，将使用OpenCV的文件后缀从.m改为.mm</p>
-</li>
-</ul>
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p><strong>来源：</strong> <a href="https://www.acwing.com/problem/content/description/2/" target="_blank" rel="noopener">acwing</a></p>
+<h2 id="题目内容"><a href="#题目内容" class="headerlink" title="题目内容"></a>题目内容</h2><p>有<em>N</em>件物品和一个容量是<em>V</em>的背包。每件物品只能使用一次。</p>
+<p>第<em>i</em>件物品的体积是<em>v<sub>i</sub></em>，价值是<em>w<sub>i</sub></em>。</p>
+<p>求解将哪些物品装入背包，可使这些物品的总体积不超过背包容量，且总价值最大。输出最大价值。</p>
+<p><strong>输入格式</strong></p>
+<p>第一行两个整数，<em>N</em>，<em>V</em>，用空格隔开，分别表示物品数量和背包容积。</p>
+<p>接下来有<em>N</em>行，每行两个整数<em>v<sub>i</sub></em>，<em>w<sub>i</sub></em>，用空格隔开，分别表示第<em>i</em>件物品的体积和价值。</p>
+<p><strong>输出格式</strong></p>
+<p>输出一个整数，表示最大价值。</p>
+<p><strong>数据范围</strong></p>
+<p>0 &lt; <em>N</em>，<em>V</em>  ≤ 1000</p>
+<p>0 &lt; <em>v<sub>i</sub><em>，</em>w<sub>i</sub></em> ≤ 1000</p>
+<p><strong>输入样例</strong></p>
+<blockquote>
+<p>4 5</p>
+<p>1 2</p>
+<p>2 4</p>
+<p>3 4</p>
+<p>4 5</p>
+</blockquote>
+<p><strong>输出样例：</strong></p>
+<blockquote>
+<p>8</p>
+</blockquote>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"><span class="keyword">int</span> f[N];</span><br><span class="line"><span class="keyword">int</span> V[N], W[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, v;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; V[i] &gt;&gt; W[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// i 表示第i个物体，j表示体积，f[j]表示在体积为j时所能装下的最大价值</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = v; j &gt;= V[i]; j--) &#123;</span><br><span class="line">            f[j] = max(f[j - V[i]] + W[i], f[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[v] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年08月15日 10:49</p>
-        <p>原始链接： <a class="post-url" href="/2019/08/15/ios-集成-OpenCV/" title="ios 集成 OpenCV">freesdw.github.io/2019/08/15/ios-集成-OpenCV/</a></p>
+        <p>最后更新： 2019年08月26日 19:24</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/26/背包问题/" title="背包问题">freesdw.github.io/2019/08/26/背包问题/</a></p>
         <footer>
             <a href="freesdw.github.io">
                 <img src="/images/logo.jpg" alt="Freesdw">
@@ -212,7 +223,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=freesdw.github.io/2019/08/15/ios-集成-OpenCV/&title=《ios 集成 OpenCV》 — Freesdw的随笔&pic=freesdw.github.ioimages/logo.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=freesdw.github.io/2019/08/26/背包问题/&title=《背包问题》 — Freesdw的随笔&pic=freesdw.github.ioimages/logo.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -222,22 +233,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=freesdw.github.io/2019/08/15/ios-集成-OpenCV/&title=《ios 集成 OpenCV》 — Freesdw的随笔&source=一个懵懂男孩的成长日记" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=freesdw.github.io/2019/08/26/背包问题/&title=《背包问题》 — Freesdw的随笔&source=一个懵懂男孩的成长日记" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=freesdw.github.io/2019/08/15/ios-集成-OpenCV/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=freesdw.github.io/2019/08/26/背包问题/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ios 集成 OpenCV》 — Freesdw的随笔&url=freesdw.github.io/2019/08/15/ios-集成-OpenCV/&via=freesdw.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《背包问题》 — Freesdw的随笔&url=freesdw.github.io/2019/08/26/背包问题/&via=freesdw.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=freesdw.github.io/2019/08/15/ios-集成-OpenCV/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=freesdw.github.io/2019/08/26/背包问题/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -247,7 +258,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=freesdw.github.io/2019/08/15/ios-集成-OpenCV/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=freesdw.github.io/2019/08/26/背包问题/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -259,7 +270,7 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/IOS/" class="color4">IOS</a>
+    <a href="/tags/算法/" class="color3">算法</a>
       
   </li>
 
@@ -272,26 +283,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#IOS-集成-OpenCV"><span class="post-toc-text">IOS 集成 OpenCV</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目"><span class="post-toc-text">题目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#题目内容"><span class="post-toc-text">题目内容</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码实现"><span class="post-toc-text">代码实现</span></a></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/08/26/快速幂求解/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          快速幂求解
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/07/23/At-First/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">First</span>
+    <a href="/2019/08/26/快速幂求解/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">快速幂求解</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
