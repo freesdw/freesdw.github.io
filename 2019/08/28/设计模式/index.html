@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>设计模式 | Freesdw的随笔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Freesdw,Freesdw's Essay">
+  
+  <meta name="description" content="基础设计模式定义设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。设计模式是实现特定需求的接近代码层面的设计套路，通常用于梳理和表达对象之间较为复杂的依赖和交互关系，将错综复杂的容易膨胀的难以理解和扩展的条件判断逻辑解开成一系列对象的清晰可理解的易扩展的交互结构。 使用目的为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。设计模式使代码">
+<meta name="keywords" content="分析与设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式">
+<meta property="og:url" content="freesdw.github.io/2019/08/28/设计模式/index.html">
+<meta property="og:site_name" content="Freesdw的随笔">
+<meta property="og:description" content="基础设计模式定义设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。设计模式是实现特定需求的接近代码层面的设计套路，通常用于梳理和表达对象之间较为复杂的依赖和交互关系，将错综复杂的容易膨胀的难以理解和扩展的条件判断逻辑解开成一系列对象的清晰可理解的易扩展的交互结构。 使用目的为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。设计模式使代码">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-28T11:37:56.004Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="设计模式">
+<meta name="twitter:description" content="基础设计模式定义设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。设计模式是实现特定需求的接近代码层面的设计套路，通常用于梳理和表达对象之间较为复杂的依赖和交互关系，将错综复杂的容易膨胀的难以理解和扩展的条件判断逻辑解开成一系列对象的清晰可理解的易扩展的交互结构。 使用目的为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。设计模式使代码">
+  
+  
+    <link rel="icon" href="/bitbug_favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">Freesdw&#39;s Essay</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About Me</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Freesdw&#39;s Essay
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个懵懂男孩的成长日记
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//freesdw.github.io">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/freesdw">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/syslisp">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-设计模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      设计模式
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-08-28
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h1 id="基础设计模式"><a href="#基础设计模式" class="headerlink" title="基础设计模式"></a>基础设计模式</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。设计模式是实现特定需求的接近代码层面的设计套路，通常用于梳理和表达对象之间较为复杂的依赖和交互关系，将错综复杂的容易膨胀的难以理解和扩展的条件判断逻辑解开成一系列对象的清晰可理解的易扩展的交互结构。</p>
+<h2 id="使用目的"><a href="#使用目的" class="headerlink" title="使用目的"></a>使用目的</h2><p>为了代码可重用性、让代码更容易被他人理解、保证代码可靠性。设计模式使代码编写真正工程化；设计模式使软件工程的基石脉络。</p>
+<p>设计模式是软件设计的入门指南，其主要理念是：<strong>面向接口的编程，组合与委托优先于基础。</strong>理解设计模式的关键点：<strong>关注点及目标用途、协作对象、静态结构及动态交互。</strong></p>
+<h2 id="常用基本设计模式"><a href="#常用基本设计模式" class="headerlink" title="常用基本设计模式"></a>常用基本设计模式</h2><h3 id="工厂模式（FactoryMethod）"><a href="#工厂模式（FactoryMethod）" class="headerlink" title="工厂模式（FactoryMethod）"></a>工厂模式（FactoryMethod）</h3><ul>
+<li>根据不同条件为客户端创建实现相同接口和功能的实例，而客户端使用的是统一的功能接口。</li>
+<li>定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使一个类的实例化延迟到其子类。</li>
+<li>使用场景：<ul>
+<li>当一个类不知道它所必须创建的对象的类的时候</li>
+<li>当一个类希望由它的子类来指定它所创建的对象的时候</li>
+<li>当类将创建对象的职责委托给多个帮助子类中的某一个，并且你希望将哪一个帮助子类是代理者这一信息局部化的时候。</li>
+</ul>
+</li>
+</ul>
+<h3 id="单例模式（Singleton）"><a href="#单例模式（Singleton）" class="headerlink" title="单例模式（Singleton）"></a>单例模式（Singleton）</h3><ul>
+<li>保证一个类仅有一个实例，并提供一个访问它的全局访问点。该类需要跟踪单一的实例，并确保没有其他实例比创建。单例类适合于需要通过单个对象访问全局资源的场合。</li>
+</ul>
+<h3 id="生成器模式（Builder）"><a href="#生成器模式（Builder）" class="headerlink" title="生成器模式（Builder）"></a>生成器模式（Builder）</h3><ul>
+<li>复杂对象的创建，需要多个步骤或组合多个子部件完成，并且在这些步骤或组件完成之前，不允许该实例的生成。通常会私有化构造器，在构造的每一步骤中会设置某些属性并返回其自身，便于链式调用，提供一个build方法生成满足某种实例创建契约的最终实例。</li>
+<li>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</li>
+<li>使用场景：<ul>
+<li>当创建复杂对象的算法应该独立于该对象的组成部分以及它们的装配方式时。</li>
+<li>当构造过程必须允许被构建的对象有不同的表示时。</li>
+</ul>
+</li>
+</ul>
+<h3 id="抽象工厂模式（AbstractFactory）"><a href="#抽象工厂模式（AbstractFactory）" class="headerlink" title="抽象工厂模式（AbstractFactory）"></a>抽象工厂模式（AbstractFactory）</h3><ul>
+<li>系统含有多个相互协作的不同功能和特性的组件，每个组件可定制为不同的种类和风格。抽象工厂为每个组件的创建提供相对应的抽象工厂的创建接口，而由具体的工厂实现对应的组件创建接口。</li>
+<li>提供一个接口，用于创建与某些对象相关或依赖于某些对象的类家族，而又不需要指定它们的具体类。通过这种模式可以去除客户代码和来自工厂的具体对象细节之间的耦合关系。</li>
+<li>类簇是一种把一个公共的抽象超类下的一些私有的具体子类组合在一起的架构。抽象超类负责声明创建私有子类实例的方法，会根据被调用方法的不同分配恰当的具体子类，每个返回的对象都可能属于不同的私有子类。</li>
+</ul>
+<h3 id="原型模式（Prototype）"><a href="#原型模式（Prototype）" class="headerlink" title="原型模式（Prototype）"></a>原型模式（Prototype）</h3><ul>
+<li>从现有对象实例快速生成和定制化对象实例，而不需要创建大量子类。原型模式特别适合于定制化。</li>
+<li>比如，现有一个房间对象，要创建含有炸弹的房间对象；这些房间对象的房间属性都是一样的，而这些炸弹可能是不同种类，也可能是相同种类只是颜色不同，使用普通的继承结构和初始化操作会产生大量的相同的赋值代码。此时使用原型模式非常恰当。通过一个含有普通炸弹的房间对象作为原型进行克隆，然后设置炸弹的种类和属性即可。</li>
+<li>原型模式使用有两点：需要一个原型管理器进行原型注册和查找；根据场景正确地实现浅拷贝和深拷贝。</li>
+<li>为原型静态或动态地增加属性和行为，可以轻易地为所有从该原型衍生的对象添加属性和行为。</li>
+</ul>
+<h3 id="适配器模式（Adapter）"><a href="#适配器模式（Adapter）" class="headerlink" title="适配器模式（Adapter）"></a>适配器模式（Adapter）</h3><ul>
+<li>将一个类的接口转换成另外一个客户希望的接口。Adapter 模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</li>
+<li>复用现有类或对象的功能，实现客户端需要的接口。有类适配器和对象适配器两种。类适配器继承现有类，可以重新定义部分行为；对象适配器使用现有类的对象实例并委托实现给该对象，可灵活使用多个现有对象。通常使用对象适配器。</li>
+</ul>
+<h3 id="组合模式（Composite）"><a href="#组合模式（Composite）" class="headerlink" title="组合模式（Composite）"></a>组合模式（Composite）</h3><ul>
+<li>具有层次性结构的单个对象与组合对象具有一致的接，客户端能够使用同一的接口操作局部和整体。组合模式最大的优点是他的节点可以自由增加，且调用节点方便。</li>
+</ul>
+<h3 id="外观模式（Facade）"><a href="#外观模式（Facade）" class="headerlink" title="外观模式（Facade）"></a>外观模式（Facade）</h3><ul>
+<li>为复杂子系统提供简单易用的接口，屏蔽实现的复杂性。通过减少复杂度和隐藏子系统之间的通讯和依赖性，使子系统更加易于使用。</li>
+</ul>
+<h3 id="装饰器模式（Decorator"><a href="#装饰器模式（Decorator" class="headerlink" title="装饰器模式（Decorator)"></a>装饰器模式（Decorator)</h3><ul>
+<li>具有相同接口的对象可以在运行时动态组合成具有复合行为的对象。可以在运行时为现有对象动态添加任意复杂的额外行为。</li>
+<li>这种模式动态地将额外的责任附加到一个对象上。在进行功能扩展时，装饰是子类化之外的一种灵活的备选方法。和子类化一样，采纳装饰模式可以加入新的行为，而又不必修改已有的代码。装饰将需要扩展的类的对象进行包装，实现与该对象相同的接口，并在将任务传递给被包装对象之前或之后加入自己的行为。装饰模式表达了这样的设计原则：类应该接纳扩展，但避免修改。</li>
+<li>动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。</li>
+</ul>
+<h3 id="代理模式（Proxy）"><a href="#代理模式（Proxy）" class="headerlink" title="代理模式（Proxy）"></a>代理模式（Proxy）</h3><ul>
+<li>为对象或服务提供间接访问机制。提供间接访问的原因可能有：隐藏源对象或源服务的部署细节（远程代理）；源对象创建开销很大，只有需要的时候才创建（虚代理）；访问源对象需要某种权限或同步互斥（保护代理）；需要为访问源对象和源服务增加额外的行为（智能代理）。代理对象与源对象通常有一致的接口，并持有源对象的引用。</li>
+<li>涉及的角色：<ul>
+<li>协议：定义代理和委托的共同接口（方法）</li>
+<li>委托：根据指定的协议，委托代理去完成实现指定接口（方法）</li>
+<li>代理：根据指定的协议，实现委托需要实现的接口（方法）</li>
+</ul>
+</li>
+</ul>
+<h3 id="桥接模式（Bridge）"><a href="#桥接模式（Bridge）" class="headerlink" title="桥接模式（Bridge）"></a>桥接模式（Bridge）</h3><ul>
+<li>抽象部分与实现部分各具有独立的继承层次结构分开变化发展，使用桥接器将抽象继承层次与实现继承层次连接起来，实现并不直接继承抽象类，而是抽象类持有实现类的引用。</li>
+<li>通常适用于这样的场景：创建一个标准协议的接口框架，而接口框架的实现可以有多种选择，客户端可以根据需要选择不同的实现。</li>
+<li>桥接器通常与抽象工厂模式、单例模式组合使用。</li>
+</ul>
+<h3 id="享元模式（Flyweight）"><a href="#享元模式（Flyweight）" class="headerlink" title="享元模式（Flyweight）"></a>享元模式（Flyweight）</h3><ul>
+<li>运用共享技术有效地支持大量细粒度的对象。</li>
+<li>可使用缓存技术实现。为了尽可能节省内存开销，需要识别享元对象中的外部状态并从中移除，使得享元对象的共享达到最大化。</li>
+<li>适用场景：<ul>
+<li>一个应用程序适用了大量的对象。</li>
+<li>完全由于使用大量的对象，造成很大的存储开销。</li>
+<li>对象的大多数状态都可变为外部状态。</li>
+<li>如果删除对象的外部状态，那么可以用相对较少的共享对象取代很多组对象。</li>
+<li>应用程序不依赖于对象标识。由于Flyweight对象可以被共享，对于概念上明显有别的对象，标识测试将返回真值。</li>
+</ul>
+</li>
+</ul>
+<h3 id="模板方法模式（TemplateMethod）"><a href="#模板方法模式（TemplateMethod）" class="headerlink" title="模板方法模式（TemplateMethod）"></a>模板方法模式（TemplateMethod）</h3><ul>
+<li>预先定义处理流程，对于流程中某些环节的具体处理留给具体业务去完成。模板方法模式应指明哪些是钩子操作（可选重定义，有默认实现），哪些是抽象操作（必须重定义，没有默认实现）。</li>
+<li>这种模式为某个操作中的算法定义框架，并将算法中的某些步骤推迟到子类实现。模板方法模式使子类可以重定义一个算法中的特定步骤，而不需要改变算法的结构。</li>
+</ul>
+<h3 id="策略模式（Strategy）"><a href="#策略模式（Strategy）" class="headerlink" title="策略模式（Strategy）"></a>策略模式（Strategy）</h3><ul>
+<li>为特定任务提供多种实现算法，并在不同场景下可灵活切换而对客户端透明。比如批量拉取数据的顺序策略以及并发策略。使用策略模式时，客户端可持有策略实现对象的接口或者策略实现对象的模板接口参数。</li>
+</ul>
+<h3 id="观察者模式（Observer）"><a href="#观察者模式（Observer）" class="headerlink" title="观察者模式（Observer）"></a>观察者模式（Observer）</h3><ul>
+<li>每个对象都有一系列观察者，当对象发生更新时推送更新给观察者，由观察者决定具体行为。通常引申为订阅-消费模式。</li>
+<li>这种模式定义一种对象间一对多的依赖关系，使得当一个对象的状态发生变化时，其他具有依赖关系的对象可以自动地被通知和更新。主体和观察者具有宽松的耦合关系。观察和被观察对象之间可以进行通讯，而不需要太多地了解对方。</li>
+</ul>
+<h3 id="职责链模式（ResponsibilityChain）"><a href="#职责链模式（ResponsibilityChain）" class="headerlink" title="职责链模式（ResponsibilityChain）"></a>职责链模式（ResponsibilityChain）</h3><ul>
+<li>使多个对象都有机会处理请求，从而避免请求的发送者和接收者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它为止。</li>
+<li>将能够处理某种请求的多个对象串联成一条处理链，请求沿着处理链传递给这些对象，对请求的发送者隐藏处理请求的实现细节（请求的发送者不需要知道谁真正处理这个请求）。责任链上的请求处理对象可以在运行时动态增减。责任链的实现中，链的构造和请求的传递既可以使用全局控制器来配置、生成和控制（集中式策略），也可以通过链上的对象来负责引用和传递（分散式策略）。需要构造两种接口：请求接口和请求处理对象的接口，而请求处理对象则需要实现请求接口。请求处理对象的顺序也值得斟酌，通常是从特殊到普遍的顺序。异常捕获和处理机制即是职责链模式的具体应用例子之一。</li>
+</ul>
+<h3 id="命令模式（Command）"><a href="#命令模式（Command）" class="headerlink" title="命令模式（Command）"></a>命令模式（Command）</h3><ul>
+<li>将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可取消的操作。请求对象将一或多个动作绑定在特定的接收者上。命令模式将发出请求的对象和接收及执行请求的对象区分开来。</li>
+</ul>
+<h3 id="迭代器模式（Iterator）"><a href="#迭代器模式（Iterator）" class="headerlink" title="迭代器模式（Iterator）"></a>迭代器模式（Iterator）</h3><ul>
+<li>提供了一种顺序访问聚合对象（也就是一个集合）中的元素，而又不必暴露潜在表示的方法。迭代器模式将访问和遍历集合元素的责任从集合对象转移到迭代器对象。迭代器定义一个访问集合元素的接口，并对当前元素进行跟踪。不同的迭代器可以执行不同的遍历策略。</li>
+</ul>
+<h3 id="状态模式（State）"><a href="#状态模式（State）" class="headerlink" title="状态模式（State）"></a>状态模式（State）</h3><ul>
+<li>一个对象具有多种状态，其某种复杂行为取决于状态及状态变迁。此时，可以单独将状态及行为抽离出来建模，并将对象的行为委托状态对象完成。若状态行为比较简单，可以使用具有行为的枚举或表来实现；若状态行为比较复杂，则需要使用状态抽象类及具体状态子类来实现。状态对象可持有对象的引用，便于访问所需要的信息。状态子类没有实例属性，可以实现为单例类。</li>
+</ul>
+<h3 id="中介者模式（Mediator）"><a href="#中介者模式（Mediator）" class="headerlink" title="中介者模式（Mediator）"></a>中介者模式（Mediator）</h3><ul>
+<li>用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</li>
+<li>有多个基础服务方，多个业务方；每个业务方都有自己需要定制化的东西。如果所有业务方直接与各个基础服务方打交道，会导致”服务方-业务方”的依赖关系激增，交互也变得复杂。引入中介者对象作为服务方和业务方的调度调控，每个基础服务方和业务方只需要与中介者交互，而不需要知道具体的服务方和业务方。中介者对象将交互行为集中化，简化了依赖关系数量。</li>
+</ul>
+<h3 id="解释器模式（Interpret）"><a href="#解释器模式（Interpret）" class="headerlink" title="解释器模式（Interpret）"></a>解释器模式（Interpret）</h3><ul>
+<li>如果特定问题可以使用一种简单的语言来描述，那么可以定义一种文法，以及对应的解释器。将问题的求解归结为根据文法构造句子，然后使用解释器来解释句子生成结果。适用于领域语言设计和实现。</li>
+</ul>
+<h3 id="访问模式（Visitor）"><a href="#访问模式（Visitor）" class="headerlink" title="访问模式（Visitor）"></a>访问模式（Visitor）</h3><ul>
+<li>一个复杂的复合对象含有多个子对象，对于每个子对象都需要定义操作，而每个子对象的操作都可能不一样。全部操作的定义放在这个复合对象里，将使得这个复合对象异常的庞大臃肿。使用访问器模式，可以将这些操作抽离出来。每种操作都是一个访问器，可以定义访问器接口；每个子对象以及该复合对象都有一个accept方法。复合对象的accept实现将委托给遍历子对象的accept。Visitor主要用于为复合对象定义可扩展的新操作。当定义一个新操作时，只需要增加一个新的Visitor，而不需要改变现有的其他类。</li>
+</ul>
+<h3 id="备忘录模式（Memento）"><a href="#备忘录模式（Memento）" class="headerlink" title="备忘录模式（Memento）"></a>备忘录模式（Memento）</h3><ul>
+<li>历史状态存储、撤销与回退。</li>
+<li>这种模式在不破坏封装的情况下，捕捉和外部化对象的内部状态，使对象在之后可以恢复到该状态。备忘录模式使关键对象的重要状态外部化，同时保持对象的内聚性。</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年08月28日 19:37</p>
+        <p>原始链接： <a class="post-url" href="/2019/08/28/设计模式/" title="设计模式">freesdw.github.io/2019/08/28/设计模式/</a></p>
+        <footer>
+            <a href="freesdw.github.io">
+                <img src="/images/logo.jpg" alt="Freesdw">
+                Freesdw
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃巧克力吧
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=freesdw.github.io/2019/08/28/设计模式/&title=《设计模式》 — Freesdw的随笔&pic=freesdw.github.ioimages/logo.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=freesdw.github.io/2019/08/28/设计模式/&title=《设计模式》 — Freesdw的随笔&source=一个懵懂男孩的成长日记" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=freesdw.github.io/2019/08/28/设计模式/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《设计模式》 — Freesdw的随笔&url=freesdw.github.io/2019/08/28/设计模式/&via=freesdw.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=freesdw.github.io/2019/08/28/设计模式/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=freesdw.github.io/2019/08/28/设计模式/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/分析与设计/" class="color1">分析与设计</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基础设计模式"><span class="post-toc-text">基础设计模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#定义"><span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用目的"><span class="post-toc-text">使用目的</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常用基本设计模式"><span class="post-toc-text">常用基本设计模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工厂模式（FactoryMethod）"><span class="post-toc-text">工厂模式（FactoryMethod）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#单例模式（Singleton）"><span class="post-toc-text">单例模式（Singleton）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成器模式（Builder）"><span class="post-toc-text">生成器模式（Builder）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#抽象工厂模式（AbstractFactory）"><span class="post-toc-text">抽象工厂模式（AbstractFactory）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型模式（Prototype）"><span class="post-toc-text">原型模式（Prototype）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#适配器模式（Adapter）"><span class="post-toc-text">适配器模式（Adapter）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组合模式（Composite）"><span class="post-toc-text">组合模式（Composite）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#外观模式（Facade）"><span class="post-toc-text">外观模式（Facade）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#装饰器模式（Decorator"><span class="post-toc-text">装饰器模式（Decorator)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代理模式（Proxy）"><span class="post-toc-text">代理模式（Proxy）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#桥接模式（Bridge）"><span class="post-toc-text">桥接模式（Bridge）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#享元模式（Flyweight）"><span class="post-toc-text">享元模式（Flyweight）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模板方法模式（TemplateMethod）"><span class="post-toc-text">模板方法模式（TemplateMethod）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#策略模式（Strategy）"><span class="post-toc-text">策略模式（Strategy）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#观察者模式（Observer）"><span class="post-toc-text">观察者模式（Observer）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#职责链模式（ResponsibilityChain）"><span class="post-toc-text">职责链模式（ResponsibilityChain）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#命令模式（Command）"><span class="post-toc-text">命令模式（Command）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迭代器模式（Iterator）"><span class="post-toc-text">迭代器模式（Iterator）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#状态模式（State）"><span class="post-toc-text">状态模式（State）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中介者模式（Mediator）"><span class="post-toc-text">中介者模式（Mediator）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解释器模式（Interpret）"><span class="post-toc-text">解释器模式（Interpret）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问模式（Visitor）"><span class="post-toc-text">访问模式（Visitor）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#备忘录模式（Memento）"><span class="post-toc-text">备忘录模式（Memento）</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/27/我的CSDN博客杂烩/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">我的CSDN博客杂烩</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Freesdw<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "freesdw.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/其他/" style="font-size: 20px;">其他</a> <a href="/tags/分析与设计/" style="font-size: 20px;">分析与设计</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About Me</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/IOS/" style="font-size: 10px;">IOS</a> <a href="/tags/其他/" style="font-size: 20px;">其他</a> <a href="/tags/分析与设计/" style="font-size: 20px;">分析与设计</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
