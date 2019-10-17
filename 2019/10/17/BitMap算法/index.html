@@ -3,23 +3,27 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>整数处理 | Freesdw的随笔</title>
+  <title>BitMap算法 | Freesdw的随笔</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="Freesdw,Freesdw's Essay">
   
-  <meta name="description" content="整数相关处理剪绳子题目来源： acwing 25 题目内容给你一根长度为n绳子，请把绳子剪成m段（m、n都是整数，2 ≤ n ≤ 58 并且m ≥ 2）。 每段绳子的长度记为k[0]、k[1]、……、k[m]。k[0]k[1]…k[m]可能的最大乘积是多少？ 例如当绳子的长度是8时，我们把它剪成长度为2、3、3的三段，此时得到最大的乘积为18。 样例  输入：8 输出：18  思路说明实际为整数划">
+  <meta name="description" content="BitMap算法转载： BitMap算法 基本思想所谓的BitMap就是用一个bit位来标记某个元素所对应的value，而key即是该元素，由于BitMap使用了bit位来存储数据，因此可以大大节省存储空间。 BitMap应用 可进行数据的快速查找，判断，删除，一般来说数据范围是int的10倍以下。 去重数据而达到压缩数据 还可以用于爬虫系统中URL去重，解决全组合问题。  BitMap应用：排序">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="整数处理">
-<meta property="og:url" content="freesdw.github.io/2019/09/01/整数处理/index.html">
+<meta property="og:title" content="BitMap算法">
+<meta property="og:url" content="freesdw.github.io/2019/10/17/BitMap算法/index.html">
 <meta property="og:site_name" content="Freesdw的随笔">
-<meta property="og:description" content="整数相关处理剪绳子题目来源： acwing 25 题目内容给你一根长度为n绳子，请把绳子剪成m段（m、n都是整数，2 ≤ n ≤ 58 并且m ≥ 2）。 每段绳子的长度记为k[0]、k[1]、……、k[m]。k[0]k[1]…k[m]可能的最大乘积是多少？ 例如当绳子的长度是8时，我们把它剪成长度为2、3、3的三段，此时得到最大的乘积为18。 样例  输入：8 输出：18  思路说明实际为整数划">
+<meta property="og:description" content="BitMap算法转载： BitMap算法 基本思想所谓的BitMap就是用一个bit位来标记某个元素所对应的value，而key即是该元素，由于BitMap使用了bit位来存储数据，因此可以大大节省存储空间。 BitMap应用 可进行数据的快速查找，判断，删除，一般来说数据范围是int的10倍以下。 去重数据而达到压缩数据 还可以用于爬虫系统中URL去重，解决全组合问题。  BitMap应用：排序">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-02T01:26:04.907Z">
+<meta property="og:image" content="/images/bitmap_0.jpg">
+<meta property="og:image" content="/images/bitmap_1.jpg">
+<meta property="og:image" content="/images/bitmap_2.jpg">
+<meta property="og:updated_time" content="2019-10-17T08:56:59.912Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="整数处理">
-<meta name="twitter:description" content="整数相关处理剪绳子题目来源： acwing 25 题目内容给你一根长度为n绳子，请把绳子剪成m段（m、n都是整数，2 ≤ n ≤ 58 并且m ≥ 2）。 每段绳子的长度记为k[0]、k[1]、……、k[m]。k[0]k[1]…k[m]可能的最大乘积是多少？ 例如当绳子的长度是8时，我们把它剪成长度为2、3、3的三段，此时得到最大的乘积为18。 样例  输入：8 输出：18  思路说明实际为整数划">
+<meta name="twitter:title" content="BitMap算法">
+<meta name="twitter:description" content="BitMap算法转载： BitMap算法 基本思想所谓的BitMap就是用一个bit位来标记某个元素所对应的value，而key即是该元素，由于BitMap使用了bit位来存储数据，因此可以大大节省存储空间。 BitMap应用 可进行数据的快速查找，判断，删除，一般来说数据范围是int的10倍以下。 去重数据而达到压缩数据 还可以用于爬虫系统中URL去重，解决全组合问题。  BitMap应用：排序">
+<meta name="twitter:image" content="/images/bitmap_0.jpg">
   
   
     <link rel="icon" href="/bitbug_favicon.ico">
@@ -107,14 +111,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-整数处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-BitMap算法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="post-title" itemprop="name">
-      整数处理
+      BitMap算法
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -127,7 +131,7 @@
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2019-09-01
+          <i class="fa fa-calendar"></i>  2019-10-17
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -143,30 +147,56 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <h1 id="整数相关处理"><a href="#整数相关处理" class="headerlink" title="整数相关处理"></a>整数相关处理</h1><h2 id="剪绳子"><a href="#剪绳子" class="headerlink" title="剪绳子"></a>剪绳子</h2><p><strong>题目来源：</strong> <a href="https://www.acwing.com/problem/content/24/" target="_blank" rel="noopener">acwing 25</a></p>
-<h3 id="题目内容"><a href="#题目内容" class="headerlink" title="题目内容"></a>题目内容</h3><p>给你一根长度为<em>n</em>绳子，请把绳子剪成<em>m</em>段（<em>m</em>、<em>n</em>都是整数，2 ≤ n ≤ 58 并且<em>m</em> ≥ 2）。</p>
-<p>每段绳子的长度记为k[0]、k[1]、……、k[m]。k[0]k[1]…k[m]可能的最大乘积是多少？</p>
-<p>例如当绳子的长度是8时，我们把它剪成长度为2、3、3的三段，此时得到最大的乘积为18。</p>
-<p><strong>样例</strong></p>
-<blockquote>
-<p>输入：8</p>
-<p>输出：18</p>
-</blockquote>
-<h3 id="思路说明"><a href="#思路说明" class="headerlink" title="思路说明"></a>思路说明</h3><p>实际为整数划分问题，应将绳子分成由2和3组成的段，且应尽可能分成更多长度为3的段。即如果长度mod 3后余数为2，则保留2，如果余数为1，则凑够4，分成2+2。</p>
-<p><strong>证明</strong></p>
-<blockquote>
-<p>将长度为n的绳子分为k段，即n = n<sub>1</sub> + n<sub>2</sub> + … + n<sub>k</sub>。</p>
-<p>1、若n<sub>i</sub> ≥ 5，则有3 * （n<sub>i</sub> - 3） ≥ n<sub>i</sub>，因为此时 2 * n<sub>i</sub>≥ 9 恒成立。</p>
-<p>2、若n<sub>i</sub> = 4，则4 = 2 * 2，即将4 = 2 + 2可获得最大乘积。</p>
-<p>3、分成的段中不可能有3个以上的2，因为2 * 2 * 2 &lt; 3 * 3。</p>
-</blockquote>
-<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProductAfterCutting</span><span class="params">(<span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(length &lt;= <span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span> * (length - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(length % <span class="number">3</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            ans *= <span class="number">2</span> * <span class="number">2</span>;</span><br><span class="line">            length -= <span class="number">4</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(length % <span class="number">3</span> == <span class="number">2</span>) &#123;</span><br><span class="line">            ans *= <span class="number">2</span>;</span><br><span class="line">            length -= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(length) &#123;</span><br><span class="line">            ans *= <span class="number">3</span>;</span><br><span class="line">            length -= <span class="number">3</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
+            <h1 id="BitMap算法"><a href="#BitMap算法" class="headerlink" title="BitMap算法"></a>BitMap算法</h1><p><strong>转载：</strong> <a href="https://blog.csdn.net/gongpulin/article/details/81137548" target="_blank" rel="noopener">BitMap算法</a></p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>所谓的BitMap就是用一个bit位来标记某个元素所对应的value，而key即是该元素，由于BitMap使用了bit位来存储数据，因此可以大大节省存储空间。</p>
+<h3 id="BitMap应用"><a href="#BitMap应用" class="headerlink" title="BitMap应用"></a>BitMap应用</h3><ol>
+<li>可进行数据的快速查找，判断，删除，一般来说数据范围是int的10倍以下。</li>
+<li>去重数据而达到压缩数据</li>
+<li>还可以用于爬虫系统中URL去重，解决全组合问题。</li>
+</ol>
+<h3 id="BitMap应用：排序示例"><a href="#BitMap应用：排序示例" class="headerlink" title="BitMap应用：排序示例"></a>BitMap应用：排序示例</h3><p>假设我们要对0-7内的5个元素（4，7，2，5，3）排序（这里假设这些元素没有重复）。那么我们就可以采用BitMap的方法来达到排序的目的。要表示8个数，我们就只需要8个bit（1Byte），首先我们开辟1Byte的空间，将这些空间的所有bit位都置为0，如下图：</p>
+<p><img src="/images/bitmap_0.jpg" alt="bitmap_0"></p>
+<p>然后遍历这5个元素，首先第一个元素是4，那么就把4对应的位置置1（可以这样操作p+(i/8)|(0x01&lt;&lt;(i%8)），当然了这里的操作设计到Big-ending和Little-ending的情况，这里默认为Big-ending。不过计算机一般都是小端存储的，如intel。（小端的话就是讲倒数第5位置1），因为是从零开始的，所以要把第5位置为1，如下图：</p>
+<p><img src="/images/bitmap_1.jpg" alt="bitmap_1"></p>
+<p>然后再处理第二个元素7，讲第8位置为1，接着再处理第三个元素，一直到最后处理完所有的元素，将相应的位置为1，这时候的内存的bit位的状态如下：</p>
+<p><img src="/images/bitmap_2.jpg" alt="bitmap_2"></p>
+<p>然后我们现在遍历一遍bit区域，将该位是1的位的编号输出（2，3，4，5，7），这样就达到了排序的目的。</p>
+<h3 id="BitMap排序复杂度分析"><a href="#BitMap排序复杂度分析" class="headerlink" title="BitMap排序复杂度分析"></a>BitMap排序复杂度分析</h3><p>BitMap排序需要的时间复杂度和空间复杂度依赖于数据中最大的数字。</p>
+<p>BitMap排序的时间复杂度不是O(N)的，而是取决于待排序数组中的最大值MAX，在实际应用上关系也不大，比如我开10个线程去读byte数组，那么复杂度为：O(MAX/10)。也就是，要是读取的，可以用多线程的方式去读取。时间复杂度方面也是O(Max/n)，其中Max为byte[]数组的大小，n为线程大小。</p>
+<p>空间复杂度应为O(MAX/8)bytes。</p>
+<h3 id="BitMap算法流程"><a href="#BitMap算法流程" class="headerlink" title="BitMap算法流程"></a>BitMap算法流程</h3><p>假设需要排序或者查找的最大数MAX=10000000，那么我们需要申请内存空间的大小为int a[1 + MAX/32]。</p>
+<p>其中：a[0]再内存中占32位可以对应十进制数0-31，以此类推：</p>
+<p>bitmap表为：</p>
+<p>a[0] ———-&gt; 0-31</p>
+<p>a[1] ———-&gt; 32-63</p>
+<p>a[2] ———-&gt; 64-95</p>
+<p>a[3] ———-&gt; 96-127</p>
+<p>……….</p>
+<p>我们要把一个整数N映射到BitMap中去，首先要确定把这个N Mapping到哪一个数组元素中，即确定映射元素的index。我们用int类型的数组作为map的元素，这样我们就知道了一个元素能够表示的数字个数（这里是32）。于是N/32就可以知道我们需要映射的key了。所以余下来的那个N%32就是要映射到的位数。</p>
+<p>*<em>1. 求十进制数对应在数组a中的下标： *</em></p>
+<p>先由十进制数n转换为与32的余可转化为对应在数组a中的下标。</p>
+<p>如十进制数0-31，都应该对应在a[0]中，不如n=24，那么n/32=0，则24对应在数组a中的下标为0。又比如n=60，那么n/32=1，则60对应在数组a中的下标为1，同理可以计算0-N在数组a中的下标。</p>
+<p>i = N &gt;&gt; K </p>
+<p><strong>2.求十进制数对应数组元素a[i]在0-31中的为m：</strong></p>
+<p>十进制数0-31就对应0-31，而32-63则对应也是0-31，即给定一个数n可以通过mod32求得对应0-31中的数。</p>
+<p>m = n &amp; ((1 &lt;&lt; K) - 1)</p>
+<p><strong>3.利用以为0-31使得对应第m个bit位为1</strong></p>
+<p>如a[i]的第m位置1：a[i] = a[i] | (1 &lt;&lt; m)</p>
+<h3 id="BitMap算法评价"><a href="#BitMap算法评价" class="headerlink" title="BitMap算法评价"></a>BitMap算法评价</h3><p><strong>优点：</strong></p>
+<ol>
+<li>运算效率高，不进行比较和移位；</li>
+<li>占用内存少，比如最大的数MAX=10000000；只需要占用内存为MAX/(8*1024 * 1024) = 1.25M。</li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li>所有的数据不能重复，即不可对重复的数据进行排序。</li>
+<li>当数据类似(1,1000,100000)只有3个数据的时候，用BitMap时间复杂度和空间复杂度相当大，只有当数据比较密集时才有优势。</li>
+</ol>
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年09月02日 09:26</p>
-        <p>原始链接： <a class="post-url" href="/2019/09/01/整数处理/" title="整数处理">freesdw.github.io/2019/09/01/整数处理/</a></p>
+        <p>最后更新： 2019年10月17日 16:56</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/17/BitMap算法/" title="BitMap算法">freesdw.github.io/2019/10/17/BitMap算法/</a></p>
         <footer>
             <a href="freesdw.github.io">
                 <img src="/images/logo.jpg" alt="Freesdw">
@@ -223,7 +253,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=freesdw.github.io/2019/09/01/整数处理/&title=《整数处理》 — Freesdw的随笔&pic=/images/integer.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=freesdw.github.io/2019/10/17/BitMap算法/&title=《BitMap算法》 — Freesdw的随笔&pic=/images/bitmap.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -233,22 +263,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=freesdw.github.io/2019/09/01/整数处理/&title=《整数处理》 — Freesdw的随笔&source=一个懵懂男孩的成长日记" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=freesdw.github.io/2019/10/17/BitMap算法/&title=《BitMap算法》 — Freesdw的随笔&source=一个懵懂男孩的成长日记" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=freesdw.github.io/2019/09/01/整数处理/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=freesdw.github.io/2019/10/17/BitMap算法/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《整数处理》 — Freesdw的随笔&url=freesdw.github.io/2019/09/01/整数处理/&via=freesdw.github.io" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《BitMap算法》 — Freesdw的随笔&url=freesdw.github.io/2019/10/17/BitMap算法/&via=freesdw.github.io" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=freesdw.github.io/2019/09/01/整数处理/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=freesdw.github.io/2019/10/17/BitMap算法/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -258,7 +288,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=freesdw.github.io/2019/09/01/整数处理/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=freesdw.github.io/2019/10/17/BitMap算法/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -283,26 +313,16 @@
 
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#整数相关处理"><span class="post-toc-text">整数相关处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#剪绳子"><span class="post-toc-text">剪绳子</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#题目内容"><span class="post-toc-text">题目内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路说明"><span class="post-toc-text">思路说明</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码实现"><span class="post-toc-text">代码实现</span></a></li></ol></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#BitMap算法"><span class="post-toc-text">BitMap算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基本思想"><span class="post-toc-text">基本思想</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BitMap应用"><span class="post-toc-text">BitMap应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BitMap应用：排序示例"><span class="post-toc-text">BitMap应用：排序示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BitMap排序复杂度分析"><span class="post-toc-text">BitMap排序复杂度分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BitMap算法流程"><span class="post-toc-text">BitMap算法流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BitMap算法评价"><span class="post-toc-text">BitMap算法评价</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
 
 <nav id="article-nav">
   
-    <a href="/2019/10/17/BitMap算法/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          BitMap算法
-        
-      </span>
-    </a>
   
-  
-    <a href="/2019/08/29/数组处理/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">数组处理</span>
+    <a href="/2019/09/01/整数处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">整数处理</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
